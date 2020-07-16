@@ -1,6 +1,6 @@
 #pragma once
 #include <array>
-static class colors
+class colors
 {
 public:
 	static std::array<float, 4>* get_colors();

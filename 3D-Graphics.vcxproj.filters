@@ -26,6 +26,9 @@
     <Filter Include="utils">
       <UniqueIdentifier>{0a6f42dc-0c3a-4d5d-86cb-fca512b97590}</UniqueIdentifier>
     </Filter>
+    <Filter Include="shaders">
+      <UniqueIdentifier>{82619df1-e579-48ed-814f-af52c1eff1be}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp" />
@@ -35,6 +38,7 @@
       <Filter>utils</Filter>
     </ClCompile>
     <ClCompile Include="graphics.cpp" />
+    <ClCompile Include="Triangle.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h" />
@@ -43,6 +47,10 @@
       <Filter>utils</Filter>
     </ClInclude>
     <ClInclude Include="graphics.h" />
+    <ClInclude Include="Triangle.h" />
+    <ClInclude Include="utils.h">
+      <Filter>utils</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="Assets\StoreLogo.png">
@@ -51,5 +59,13 @@
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest" />
+  </ItemGroup>
+  <ItemGroup>
+    <FxCompile Include="TriangleVertexShader.hlsl">
+      <Filter>shaders</Filter>
+    </FxCompile>
+    <FxCompile Include="TrianglePixelShader.hlsl">
+      <Filter>shaders</Filter>
+    </FxCompile>
   </ItemGroup>
 </Project>

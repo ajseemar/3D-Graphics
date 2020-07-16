@@ -1,6 +1,7 @@
 #include "pch.h"
 #include "Graphics.h"
 #include "colors.h"
+//#include "utils.h"
 
 using Microsoft::WRL::ComPtr;
 
@@ -64,17 +65,31 @@ void Graphics::initialize()
 
 		dev->CreateRenderTargetView(backbuffer.Get(), nullptr, &rtv);
 	}
+
+	vp.TopLeftX = 0.f;
+	vp.TopLeftY = 0.f;
+	vp.Width = win->Bounds.Width;
+	vp.Height = win->Bounds.Height;
+	vp.MinDepth = 0.f;
+	vp.MaxDepth = 1.f;
+
+	t = std::make_unique<Triangle>(dev, ctx);
 }
 
 void Graphics::update()
 {
+	t->update();
 }
 
 void Graphics::render()
 {
+	ctx->RSSetViewports(1u, &vp);
+	
 	ctx->OMSetRenderTargets(1u, rtv.GetAddressOf(), nullptr);
 
 	ctx->ClearRenderTargetView(rtv.Get(), colors::sea_green.data());
+
+	t->render();
 
 	swapchain->Present(1u, 0u);
 }
