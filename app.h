@@ -1,4 +1,5 @@
 #pragma once
+#include "graphics.h"
 
 ref class App sealed : public Windows::ApplicationModel::Core::IFrameworkView
 {
@@ -13,6 +14,7 @@ public:
 
 private:
 	bool m_closed;
+	Graphics gfx;
 };
 
 ref class AppSource sealed : Windows::ApplicationModel::Core::IFrameworkViewSource

@@ -23,15 +23,26 @@
     <Image Include="Assets\Wide310x150Logo.scale-200.png">
       <Filter>Assets</Filter>
     </Image>
+    <Filter Include="utils">
+      <UniqueIdentifier>{0a6f42dc-0c3a-4d5d-86cb-fca512b97590}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="app.cpp" />
+    <ClCompile Include="colors.cpp">
+      <Filter>utils</Filter>
+    </ClCompile>
+    <ClCompile Include="graphics.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h" />
     <ClInclude Include="app.h" />
+    <ClInclude Include="colors.h">
+      <Filter>utils</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="Assets\StoreLogo.png">

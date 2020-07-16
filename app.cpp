@@ -24,9 +24,13 @@ void App::Load(Platform::String^ entrypoint)
 void App::Run()
 {
 	Windows::UI::Core::CoreWindow^ win = Windows::UI::Core::CoreWindow::GetForCurrentThread();
+	gfx.initialize();
 
 	while (!m_closed) {
 		win->Dispatcher->ProcessEvents(Windows::UI::Core::CoreProcessEventsOption::ProcessAllIfPresent);
+
+		gfx.update();
+		gfx.render();
 	}
 }
 
